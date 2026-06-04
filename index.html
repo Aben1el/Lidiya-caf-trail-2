@@ -3,46 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lidiya Cafe | Exceptional Dining</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Lidiya Cafe | Refined Dining</title>
     <style>
-        :root { 
-            --bg-color: #fdfbf7; 
-            --text-dark: #3e362e; 
-            --accent: #b8860b;
+        :root {
+            --bg-color: #fdfbf7;
+            --text-color: #3e362e;
+            --accent-color: #b8860b;
             --card-bg: #f5f0e6;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; }
 
-        /* Hero Section */
+        /* Hero Section (Based on image_338639.png, colored white) */
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 8%; }
-        .hero-label { color: var(--accent); text-transform: uppercase; letter-spacing: 8px; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
+        .hero-label { color: var(--accent-color); text-transform: uppercase; letter-spacing: 8px; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; }
         .btn-group { display: flex; gap: 20px; }
-        .btn { padding: 18px 45px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-        .btn-solid { background: var(--accent); color: white; }
-        .btn-outline { border: 2px solid var(--accent); background: transparent; color: var(--accent); }
-        .btn:hover { opacity: 0.9; }
+        .btn { padding: 18px 45px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-transform: uppercase; }
+        .btn-solid { background: var(--accent-color); color: white; }
+        .btn-outline { border: 2px solid var(--accent-color); background: transparent; color: var(--accent-color); }
 
-        /* Menu Section */
-        #menu { padding: 100px 8%; }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-content { padding: 30px; }
-        
-        /* Contact Section */
-        .contact-section { padding: 100px 8%; text-align: center; background: var(--bg-color); }
+        /* Contact Section (Based on image_23a7e0.png, colored white) */
+        .contact-section { padding: 100px 8%; text-align: center; }
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
         .contact-card { background: var(--card-bg); padding: 40px; border-radius: 20px; }
-        .contact-card h3 { margin: 15px 0; font-family: 'Playfair Display', serif; }
+        .contact-card h3 { margin: 20px 0; font-family: 'Playfair Display', serif; }
     </style>
 </head>
 <body>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-label">LIDIYA CAFE</div>
         <h1>Taste the Difference</h1>
         <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
@@ -52,26 +42,8 @@
         </div>
     </section>
 
-    <section id="menu">
-        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 50px; font-family: 'Playfair Display', serif;">Signature Selection</h2>
-        <div class="menu-grid">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800" alt="Cake">
-                <div class="card-content"><h3>Black Forest Cake</h3><p>Rich chocolate sponge, cherry filling.</p></div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Burger">
-                <div class="card-content"><h3>The Signature Burger</h3><p>Double smashed patties, aged cheddar.</p></div>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800" alt="Pizza">
-                <div class="card-content"><h3>Pepperoni Supreme</h3><p>Crispy edge, premium pepperoni.</p></div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact-section">
-        <div class="hero-label">Visit Us</div>
+        <div class="hero-label">VISIT US</div>
         <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Come Say Hello</h2>
         <div class="contact-grid">
             <div class="contact-card">
