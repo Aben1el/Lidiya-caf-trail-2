@@ -8,10 +8,20 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Outfit', sans-serif; background-color: #12100d; color: #ffffff; line-height: 1.6; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #12100d; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 700; }
+        nav ul { display: flex; list-style: none; gap: 15px; align-items: center; }
+        nav a { text-decoration: none; color: #ffffff; padding: 10px 20px; border-radius: 50px; transition: 0.3s; }
+        nav a:hover { background: #333; }
+        .order-btn { background: #d4af37; color: #000; padding: 12px 30px; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; }
 
         /* Hero */
         .hero { text-align: center; padding: 150px 8%; display: flex; flex-direction: column; align-items: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin-bottom: 20px; }
+        .hero-label { color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 5rem; margin-bottom: 20px; }
         .btn-container { display: flex; gap: 20px; margin-top: 30px; }
         .btn { padding: 15px 40px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; }
         .btn-primary { background: #d4af37; color: #000; }
@@ -20,24 +30,40 @@
         /* Menu */
         #menu { padding: 80px 8%; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .card { background: #1a1815; padding: 20px; border: 1px solid #333; }
+        .card { background: #1a1815; padding: 20px; border: 1px solid #333; transition: 0.4s; }
+        .card:hover { background: #ffffff; color: #000; transform: translateY(-10px); }
         .card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px; }
 
         /* Reviews */
         #reviews { padding: 80px 8%; background: #1a1815; }
-        .review-card { border-bottom: 1px solid #333; padding: 20px 0; }
-        .star { color: #d4af37; }
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .review-card { background: #12100d; padding: 25px; border: 1px solid #333; border-radius: 10px; }
 
         /* Contact */
         #contact { padding: 80px 8%; text-align: center; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .contact-card { background: #1a1815; padding: 40px; border: 1px solid #333; border-radius: 10px; }
+
         footer { padding: 50px 8%; text-align: center; color: #888; }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">LIDIYA CAFE</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="order-btn">ORDER ONLINE</button></li>
+        </ul>
+    </nav>
+
     <section class="hero" id="home">
+        <div class="hero-label">LIDIYA CAFE</div>
         <h1>Taste the Difference</h1>
-        <p>Artisanal coffee, freshly baked cakes, and gourmet fast food.</p>
+        <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
         <div class="btn-container">
             <button class="btn btn-primary">ORDER ONLINE</button>
             <button class="btn btn-secondary">EXPLORE MENU</button>
@@ -45,7 +71,7 @@
     </section>
 
     <section id="menu">
-        <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 3rem;">Menu</h2>
+        <h2 style="text-align: center; font-size: 3rem;">Signature Selection</h2>
         <div class="menu-grid">
             <article class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=300&fit=crop" alt="Cake"><h3>Black Forest Cake</h3><p>$8.50</p></article>
             <article class="card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=300&fit=crop" alt="Burger"><h3>Signature Burger</h3><p>$14.50</p></article>
@@ -54,17 +80,25 @@
     </section>
 
     <section id="reviews">
-        <h2 style="text-align: center; margin-bottom: 30px;">Customer Reviews (4.2 / 20 Reviews)</h2>
-        <div class="review-card"><strong>Ruth:</strong> "Delicious cake and vanilla pastries. Highly recommend visiting if you are ever near Kebena."</div>
-        <div class="review-card"><strong>Hayat Jemal:</strong> "Their food is so good, you should try their special burger."</div>
-        <div class="review-card"><strong>Danny Mia:</strong> "Excellent service and great taste."</div>
-        <div class="review-card"><strong>Rezan Hasan:</strong> "Great food, good service!"</div>
-        <div class="review-card"><strong>S A:</strong> "Amazing service. Love it."</div>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">What Guests Say</p>
+            <h2>Loved by the Community</h2>
+        </div>
+        <div class="review-grid">
+            <div class="review-card"><p style="color: #d4af37;">★★★★★</p><p style="font-style: italic;">"Delicious cake and vanilla pastries. Every bite was pure heaven!"</p><p style="margin-top:10px; font-size: 0.8rem; color: #888;">— GUEST</p></div>
+            <div class="review-card"><p style="color: #d4af37;">★★★★★</p><p style="font-style: italic;">"Food tasted incredibly fresh — you can tell they use the best ingredients."</p><p style="margin-top:10px; font-size: 0.8rem; color: #888;">— GUEST</p></div>
+            <div class="review-card"><p style="color: #d4af37;">★★★★★</p><p style="font-style: italic;">"Friendly and welcoming staff made us feel right at home."</p><p style="margin-top:10px; font-size: 0.8rem; color: #888;">— GUEST</p></div>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>123 Main Street | Open Daily: 7:00 AM — 10:00 PM</p>
+        <p style="color: #d4af37; text-transform: uppercase; letter-spacing: 2px;">Visit Us</p>
+        <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Come Say Hello</h2>
+        <div class="contact-grid">
+            <div class="contact-card"><h3>Location</h3><p style="color: #888; margin-top: 10px;">123 Main Street, Addis Ababa</p></div>
+            <div class="contact-card"><h3>Hours</h3><p style="color: #888; margin-top: 10px;">7:00 AM — 10:00 PM</p></div>
+            <div class="contact-card"><h3>Contact</h3><p style="color: #888; margin-top: 10px;">+1 (555) 123-4567</p></div>
+        </div>
     </section>
 
     <footer><p>© 2026 Lidiya Cafe. All rights reserved.</p></footer>
