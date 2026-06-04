@@ -8,24 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --bg: #0a0907; --glass: rgba(26, 24, 21, 0.7); }
-        
-        /* THIS IS THE KEY LINE FOR SMOOTH ANIMATION */
         html { scroll-behavior: smooth; }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--bg); color: #ffffff; line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(18, 16, 13, 0.9); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
         .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav a { color: #fff; text-decoration: none; transition: 0.3s; cursor: pointer; }
         nav a:hover { color: var(--gold); }
 
-        /* Hero, Menu, Contact, etc... (The rest of your structure remains the same) */
+        /* Updated Hero to match image_338639.png */
         .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin-bottom: 20px; }
-        
+        .hero-label { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin-bottom: 20px; line-height: 1.1; max-width: 800px; }
+        .hero p { color: #a0a0a0; margin-bottom: 40px; max-width: 500px; }
+        .btn-container { display: flex; gap: 20px; }
+        .btn { padding: 15px 40px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .btn-primary { background: var(--gold); color: #000; }
+        .btn-secondary { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
+        .btn:hover { opacity: 0.8; }
+
         #menu { padding: 80px 8%; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .card { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; overflow: hidden; }
@@ -36,8 +39,6 @@
 
         #contact { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .map-container { width: 100%; height: 400px; border-radius: 15px; overflow: hidden; border: 1px solid var(--gold); }
-        .btn { padding: 15px 40px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; background: var(--gold); transition: 0.3s; }
-        .btn:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
@@ -52,8 +53,13 @@
     </nav>
 
     <section class="hero" id="home" data-aos="fade-in">
+        <div class="hero-label">LIDIYA CAFE</div>
         <h1>Taste the Difference</h1>
-        <button class="btn" style="margin-top: 30px;">ORDER ONLINE</button>
+        <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
+        <div class="btn-container">
+            <button class="btn btn-primary">ORDER ONLINE</button>
+            <button class="btn btn-secondary">EXPLORE MENU</button>
+        </div>
     </section>
 
     <section id="menu">
