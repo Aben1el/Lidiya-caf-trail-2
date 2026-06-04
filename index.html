@@ -17,7 +17,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--warm-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 
-        /* Navigation (Updated to warm-white background) */
+        /* Navigation */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: var(--warm-white); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid var(--cream); }
         .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: 3px; color: var(--accent); }
         nav ul { display: flex; list-style: none; gap: 40px; }
@@ -45,6 +45,10 @@
         .card:hover img { transform: scale(1.05); }
         .card:hover .card-overlay { transform: translateY(0); }
         .card-overlay h3 { color: var(--accent); margin-bottom: 15px; }
+
+        /* Contact Details Section */
+        .contact-info { padding: 50px 8%; background: var(--warm-white); text-align: center; }
+        .contact-info a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1.2rem; display: block; margin: 10px 0; }
 
         /* About & Contact */
         .content-section { padding: 100px 8%; background: #fff; text-align: center; }
@@ -104,6 +108,12 @@
             <p>"The food is absolutely amazing, and the atmosphere is perfect for relaxing. A true gem in Addis Ababa!"</p>
             <h4 style="margin-top: 15px; color: var(--accent);">— Satisfied Guest</h4>
         </div>
+    </section>
+
+    <section class="contact-info">
+        <h3>Connect With Us</h3>
+        <a href="mailto:hello@lidiyacafe.com">hello@lidiyacafe.com</a>
+        <a href="tel:+251911000000">+251 911 000 000</a>
     </section>
 
     <section id="contact">
