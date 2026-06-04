@@ -1,0 +1,52 @@
+/* Updated Theme based on image_418a38.png and image_41385b.png */
+:root {
+    --bg-color: #0c0c0c;       /* Deep, rich dark base */
+    --surface-color: #1a1a1a;  /* Subtle variation for cards */
+    --accent-gold: #c5a059;    /* The signature warm gold */
+    --text-main: #ffffff;      /* Pure white for headings */
+    --text-muted: #a3a3a3;     /* Elegant grey for body text */
+    --border-subtle: #2d2d2d;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-muted);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Cleaner, modern font */
+}
+
+/* Primary Button Styling */
+.cta-button {
+    background-color: var(--accent-gold);
+    color: #000000;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover {
+    opacity: 0.9;
+}
+
+/* Card Styling inspired by image_41385b.png */
+.service-card, .price-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--text-main);
+}
+
+/* Gold Accents for subheadings */
+.section-pretitle {
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
