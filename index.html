@@ -46,6 +46,12 @@
         .card:hover .card-overlay { transform: translateY(0); }
         .card-overlay h3 { color: var(--accent); margin-bottom: 15px; }
 
+        /* Reviews Section (Updated) */
+        .reviews-section { padding: 100px 8%; background: var(--text-dark); color: white; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+        .review-card { border: 1px solid #444; padding: 30px; border-radius: 15px; text-align: left; }
+        .stars { color: var(--accent); margin-bottom: 10px; display: block; }
+
         /* Connect Section */
         .connect-section { padding: 100px 8%; text-align: center; background: var(--warm-white); }
         .connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
@@ -56,7 +62,6 @@
         /* About & Contact */
         .content-section { padding: 100px 8%; background: #fff; text-align: center; }
         .big-title { font-size: 4rem; margin-bottom: 30px; font-family: 'Playfair Display', serif; }
-        .review-card { max-width: 600px; margin: 50px auto 0 auto; padding: 40px; background: var(--cream); border-radius: 20px; font-style: italic; }
         #contact { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; background: var(--cream); }
         .map-container { width: 100%; height: 450px; border-radius: 25px; overflow: hidden; border: 2px solid var(--accent); }
     </style>
@@ -104,12 +109,30 @@
         </div>
     </section>
 
-    <section id="about" class="content-section">
-        <h2 class="big-title">Our Story</h2>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">At Lidiya Cafe, we believe that food is more than just sustenance—it's a way to bring people together. We are dedicated to using fresh, locally sourced ingredients to craft timeless comfort foods and artisan treats.</p>
-        <div class="review-card">
-            <p>"The food is absolutely amazing, and the atmosphere is perfect for relaxing. A true gem in Addis Ababa!"</p>
-            <h4 style="margin-top: 15px; color: var(--accent);">— Satisfied Guest</h4>
+    <section class="reviews-section">
+        <div class="hero-label">What Guests Say</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Loved by the Community</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <span class="stars">★★★★★</span>
+                <p>"Delicious cake and vanilla pastries. Every bite was pure heaven!"</p>
+                <p style="margin-top: 10px; font-weight: 600;">— Guest</p>
+            </div>
+            <div class="review-card">
+                <span class="stars">★★★★★</span>
+                <p>"Food tasted incredibly fresh — you can tell they use the best ingredients."</p>
+                <p style="margin-top: 10px; font-weight: 600;">— Guest</p>
+            </div>
+            <div class="review-card">
+                <span class="stars">★★★★★</span>
+                <p>"Friendly and welcoming staff made us feel right at home."</p>
+                <p style="margin-top: 10px; font-weight: 600;">— Guest</p>
+            </div>
+            <div class="review-card">
+                <span class="stars">★★★★★</span>
+                <p>"You should try their special burger. Best I've ever had!"</p>
+                <p style="margin-top: 10px; font-weight: 600;">— Guest</p>
+            </div>
         </div>
     </section>
 
