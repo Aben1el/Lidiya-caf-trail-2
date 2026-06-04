@@ -12,39 +12,50 @@
     <style>
         /* Global Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: #2d2d2d; background-color: #fdfcf8; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: #333; background-color: #fdfcf8; }
         h1, h2 { font-family: 'Playfair Display', serif; color: #1a1a1a; }
 
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #fdfcf8; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #fdfcf8; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 700; }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav a { text-decoration: none; color: #555; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: #000; }
         
         /* Hero */
-        .hero { text-align: center; padding: 120px 8%; background-color: #f4f1ea; }
-        .hero h1 { font-size: 4rem; margin-bottom: 20px; }
+        .hero { text-align: center; padding: 120px 8%; background-color: #f7f4ee; }
         
-        /* Menu */
+        /* Menu - The "Pop" Hover Effect */
         #menu { padding: 80px 8%; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .card { background: #fff; padding: 20px; border: 1px solid #eee; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
         
-        /* Reservations Form */
-        #reservations { padding: 80px 8%; background: #fdfcf8; }
-        form { max-width: 600px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .full-width { grid-column: span 2; }
-        input, textarea { padding: 15px; border: 1px solid #dcdcdc; width: 100%; }
-        
-        /* Buttons */
-        .btn { background: #2c3e50; color: #fff; padding: 15px 30px; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; }
-        .btn:hover { background: #1a252f; }
+        .card { 
+            background: #fdfcf8; 
+            padding: 20px; 
+            border: 1px solid #eee; 
+            transition: all 0.4s ease; 
+        }
+        /* Hover Effect: Changes to crisp white and adds shadow */
+        .card:hover { 
+            background: #ffffff; 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05); 
+            border-color: #f0f0f0;
+        }
+        .card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px; }
+
+        /* Buttons - Hover Effect */
+        .btn { 
+            background: #2c3e50; 
+            color: #fff; 
+            padding: 15px 30px; 
+            border: none; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        .btn:hover { background: #ffffff; color: #2c3e50; border: 1px solid #2c3e50; }
 
         /* Footer */
-        footer { padding: 50px 8%; background: #f4f1ea; text-align: center; color: #777; }
+        footer { padding: 50px 8%; background: #f7f4ee; text-align: center; color: #777; }
     </style>
 </head>
 <body>
@@ -54,13 +65,12 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#reservations">Reservations</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <h1>Taste the Difference</h1>
-        <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
+        <p>Artisanal coffee, freshly baked cakes, and gourmet fast food.</p>
         <div style="margin-top: 30px;">
             <button class="btn">ORDER ONLINE</button>
         </div>
@@ -70,41 +80,25 @@
         <h2 style="text-align: center;">Our Signature Selection</h2>
         <div class="menu-grid">
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=300&fit=crop" alt="Black Forest Cake">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=300&fit=crop" alt="Cake">
                 <h3>Black Forest Cake</h3>
                 <p>Layers of rich chocolate sponge, cherry filling, and whipped cream.</p>
-                <p><strong>$8.50</strong></p>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=300&fit=crop" alt="Signature Burger">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&h=300&fit=crop" alt="Burger">
                 <h3>Signature Burger</h3>
                 <p>Double smashed patties, aged cheddar, caramelized onions, brioche bun.</p>
-                <p><strong>$14.50</strong></p>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&h=300&fit=crop" alt="Pepperoni Pizza">
+                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&h=300&fit=crop" alt="Pizza">
                 <h3>Pepperoni Supreme</h3>
                 <p>Double pepperoni, mozzarella, signature tomato sauce, crispy edge.</p>
-                <p><strong>$15.00</strong></p>
             </article>
         </div>
     </section>
 
-    <section id="reservations">
-        <h2 style="text-align: center; margin-bottom: 40px;">Reserve Your Table</h2>
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="date">
-            <input type="time">
-            <textarea class="full-width" placeholder="Special Requests"></textarea>
-            <button type="submit" class="btn full-width">SUBMIT REQUEST</button>
-        </form>
-    </section>
-
     <footer>
         <p>123 Main Street | Open Daily: 7:00 AM — 10:00 PM</p>
-        <p>© 2026 Lidiya Cafe. All rights reserved.</p>
     </footer>
 
 </body>
