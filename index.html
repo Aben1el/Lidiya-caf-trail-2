@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lidiya Cafe | Taste the Difference</title>
+    <title>Lidiya Cafe | Cherry & Blush Aesthetic</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* Base Styles - Elegant Soft Palette */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Outfit', sans-serif; 
-            line-height: 1.6; 
-            color: #2d2d2d; 
-            background-color: #fdfcf8; /* Soft Cream Background */
+        /* Cherry Pink Color Palette */
+        :root {
+            --cherry-pink: #d6336c;      /* Main Accent */
+            --blush-pink: #fce4ec;       /* Soft Background */
+            --cream-bg: #fffbfb;         /* Primary Background */
+            --dark-text: #2d1b24;        /* Dark Cherry Text */
         }
-        h1, h2 { font-family: 'Playfair Display', serif; color: #1a1a1a; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: var(--dark-text); background-color: var(--cream-bg); }
+        h1, h2 { font-family: 'Playfair Display', serif; color: var(--cherry-pink); }
 
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: #fdfcf8; }
-        .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: var(--cream-bg); }
+        .logo { font-size: 1.6rem; font-weight: 700; color: var(--cherry-pink); }
         nav ul { display: flex; list-style: none; align-items: center; gap: 30px; }
-        nav a { text-decoration: none; color: #555; font-size: 0.9rem; transition: 0.3s; }
-        nav a:hover { color: #000; }
-        .order-btn { background: #2c3e50; color: #fff; padding: 12px 25px; border: none; cursor: pointer; transition: 0.3s; }
-        .order-btn:hover { background: #1a252f; }
+        nav a { text-decoration: none; color: var(--dark-text); font-size: 0.9rem; }
+        
+        /* Buttons */
+        .order-btn { background: var(--cherry-pink); color: #fff; padding: 12px 25px; border: none; cursor: pointer; transition: 0.3s; }
+        .order-btn:hover { background: #b02a59; }
+        .secondary { background: transparent; border: 1px solid var(--cherry-pink); color: var(--cherry-pink); }
 
         /* Hero */
-        .hero { text-align: center; padding: 120px 8%; background-color: #f4f1ea; }
-        .hero h1 { font-size: 4rem; margin-bottom: 20px; }
-        .hero-btns { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
-        .hero-btns button { padding: 15px 35px; cursor: pointer; border: none; font-size: 1rem; }
-        .secondary { background: transparent; border: 1px solid #2c3e50 !important; color: #2c3e50; }
-
+        .hero { text-align: center; padding: 120px 8%; background-color: var(--blush-pink); }
+        
         /* Menu */
         #menu { padding: 80px 8%; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
-        .card { 
-            background: #fff; 
-            border: 1px solid #eee; 
-            padding: 30px; 
-            border-radius: 4px; 
-            text-align: center; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
+        .card { background: #fff; border: 1px solid var(--blush-pink); padding: 30px; border-radius: 12px; text-align: center; }
         
-        /* About & Forms */
-        #about, #reservations { padding: 80px 8%; text-align: center; }
+        /* Forms */
         form { max-width: 500px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
-        input, textarea { padding: 15px; border: 1px solid #dcdcdc; background: #fff; width: 100%; }
+        input, textarea { padding: 15px; border: 1px solid var(--blush-pink); width: 100%; border-radius: 6px; }
 
         /* Footer */
-        footer { padding: 50px 8%; background: #f4f1ea; text-align: center; color: #777; font-size: 0.9rem; }
+        footer { padding: 50px 8%; background: var(--blush-pink); text-align: center; color: var(--dark-text); }
     </style>
 </head>
 <body>
@@ -72,9 +64,9 @@
     <section id="home" class="hero">
         <h1>Taste the Difference</h1>
         <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
-        <div class="hero-btns">
+        <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
             <button class="order-btn">ORDER ONLINE</button>
-            <button class="secondary">EXPLORE MENU</button>
+            <button class="order-btn secondary">EXPLORE MENU</button>
         </div>
     </section>
 
@@ -88,24 +80,18 @@
         </div>
     </section>
 
-    <section id="about" style="background: #fff;">
-        <h2>Where Every Meal Feels Like Home</h2>
-        <p style="max-width: 700px; margin: 20px auto;">At Lidiya Cafe, we believe that great food brings people together. Our kitchen blends the warmth of Ethiopian hospitality with global culinary standards.</p>
-    </section>
-
-    <section id="reservations">
+    <section id="reservations" style="padding: 80px 8%;">
         <h2>Reserve Your Table</h2>
         <form>
             <input type="text" placeholder="NAME" required>
             <input type="email" placeholder="EMAIL" required>
-            <input type="number" placeholder="PARTY SIZE">
             <textarea placeholder="SPECIAL REQUESTS"></textarea>
             <button type="submit" class="order-btn">SUBMIT RESERVATION REQUEST</button>
         </form>
     </section>
 
     <footer>
-        <p>123 Main Street | +1 (555) 123-4567 | Open Daily: 7:00 AM — 10:00 PM</p>
+        <p>123 Main Street | hello@lidiyacafe.com | Open Daily: 7:00 AM — 10:00 PM</p>
         <p>© 2026 Lidiya Cafe. All rights reserved.</p>
     </footer>
 
