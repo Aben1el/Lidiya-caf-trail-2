@@ -24,8 +24,27 @@
         nav a { color: var(--text-dark); text-decoration: none; font-weight: 600; transition: 0.3s; }
         nav a:hover { color: var(--accent); }
 
-        /* Hero Section */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 8%; background: var(--warm-white); color: var(--text-dark); }
+        /* Hero Section (Live Moving Background) */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 0 8%; 
+            color: var(--text-dark); 
+            /* Subtle Live Gradient Animation */
+            background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e6 50%, #fdfbf7 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         .hero-label { color: var(--accent); text-transform: uppercase; letter-spacing: 8px; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 20px; line-height: 1; }
         .sub-headline { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.8; max-width: 600px; }
@@ -46,7 +65,7 @@
         .card:hover .card-overlay { transform: translateY(0); }
         .card-overlay h3 { color: var(--accent); margin-bottom: 15px; }
 
-        /* Reviews Section (Responsive Hover Added) */
+        /* Reviews Section */
         .reviews-section { padding: 100px 8%; background: var(--text-dark); color: white; text-align: center; }
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
         .review-card { border: 1px solid #444; padding: 30px; border-radius: 15px; text-align: left; transition: all 0.3s ease; cursor: default; }
