@@ -4,8 +4,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lidiya Cafe | Elegant Dining</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-color: #0c0c0c;
+            --surface-color: #1a1a1a;
+            --accent-gold: #c5a059;
+            --text-main: #ffffff;
+            --text-muted: #a3a3a3;
+            --border-subtle: #2d2d2d;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(12, 12, 12, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(45, 45, 45, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--text-main);
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        /* --- HERO SECTION WITH VIDEO --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(12,12,12,0.65), var(--bg-color));
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .section-pretitle {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--text-main);
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            line-height: 1.1;
+            margin-bottom: 35px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .cta-button {
+            background-color: var(--accent-gold);
+            color: #000000;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 18px 40px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #d4b271;
+            transform: translateY(-3px);
+        }
+
+        /* --- MENU GRID --- */
+        #menu {
+            padding: 100px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            color: var(--text-main);
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 40px 30px;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: #888;
+            line-height: 1.8;
+        }
+
+        .price {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            margin-top: auto;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media screen and (max-width: 992px) {
+            nav { padding: 20px 5%; }
+            #menu { padding: 80px 5%; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle { display: flex; }
+
+            .nav-links {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100vh;
+                background-color: rgba(12, 12, 12, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                transform: translateY(-100%);
+                transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a { font-size: 1.5rem; }
+
+            .menu-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .menu-toggle.open span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,13 +287,19 @@
         </div>
 
         <ul class="nav-links" id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#contact">Visit Us</a></li>
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#menu" class="nav-item">Menu</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
+        
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-milk-in-a-glass-of-coffee-in-slow-motion-23746-large.mp4" type="video/mp4">
+        </video>
+        
+        <div class="video-overlay"></div>
+
         <div class="hero-content" data-aos="fade-up">
             <div class="section-pretitle">Lidiya Cafe Collection</div>
             <h1>Taste the Difference</h1>
@@ -35,25 +309,25 @@
 
     <section id="menu">
         <div class="menu-header" data-aos="fade-up">
-            <h2 class="section-title">Our Signature Offerings</h2>
+            <h2 class="section-title">Signature Offerings</h2>
         </div>
         
         <div class="menu-grid">
             <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Black Forest Cake</h3>
-                <p>Rich chocolate sponge, tart cherry filling, and fresh whipped cream.</p>
+                <p>Rich chocolate sponge, tart cherry filling, and fresh whipped cream layered to absolute perfection.</p>
                 <span class="price">450 ETB</span>
             </div>
             
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3>The Signature Burger</h3>
-                <p>Double smashed patties, aged cheddar, and house-made sauce on a brioche bun.</p>
+                <p>Double smashed patties, aged cheddar, and our exclusive house-made sauce on a toasted brioche bun.</p>
                 <span class="price">750 ETB</span>
             </div>
             
             <div class="card" data-aos="fade-up" data-aos-delay="300">
                 <h3>Artisan Pour-Over</h3>
-                <p>Single-origin beans roasted to perfection, brewed with precision.</p>
+                <p>Single-origin Ethiopian beans roasted to perfection and brewed with precise temperature control.</p>
                 <span class="price">150 ETB</span>
             </div>
         </div>
@@ -62,15 +336,41 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Initialize Scroll Animations
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 50
+        });
 
-        // Mobile Menu Toggle Logic
+        // Mobile Menu Logic
         const menuToggle = document.querySelector('#mobile-menu');
         const navLinks = document.querySelector('#nav-links');
+        const navItems = document.querySelectorAll('.nav-item');
 
+        // Toggle menu open/close
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking a link
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
+        });
+
+        // Optional: Change navbar background on scroll for better visibility
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(12, 12, 12, 0.98)';
+                nav.style.borderBottom = '1px solid var(--border-subtle)';
+            } else {
+                nav.style.background = 'rgba(12, 12, 12, 0.85)';
+                nav.style.borderBottom = '1px solid rgba(45, 45, 45, 0.5)';
+            }
         });
     </script>
 </body>
