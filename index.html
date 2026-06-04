@@ -7,65 +7,93 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Warm White Palette */
         :root { 
             --warm-white: #fdfbf7; 
             --cream: #f5f0e6; 
             --text-dark: #3e362e; 
-            --accent: #b8860b; 
+            --accent: #b8860b;
         }
+        html { scroll-behavior: smooth; }
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--warm-white); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--warm-white); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(253, 251, 247, 0.9); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid var(--cream); }
+        .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: 3px; color: var(--accent); }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { color: var(--text-dark); text-decoration: none; font-weight: 600; transition: 0.4s; }
+        nav a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 8%; background: var(--cream); }
+        .hero-label { color: var(--accent); text-transform: uppercase; letter-spacing: 8px; font-size: 0.9rem; margin-bottom: 20px; font-weight: 600; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 20px; line-height: 1; }
+        .btn { padding: 18px 45px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; text-transform: uppercase; transition: 0.4s; background: var(--accent); color: white; }
+        .btn:hover { background: var(--text-dark); }
+
+        /* Menu */
         #menu { padding: 100px 8%; }
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        
-        /* Card Hover Interaction */
-        .card { 
-            background: white; 
-            border: 1px solid var(--cream); 
-            border-radius: 25px; 
-            overflow: hidden; 
-            transition: all 0.4s ease; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-            cursor: pointer;
-        }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent); }
-        
+        .card { background: white; border: 1px solid var(--cream); border-radius: 25px; overflow: hidden; transition: 0.5s; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-15px); border-color: var(--accent); }
         .img-wrap { height: 280px; overflow: hidden; }
         .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
-        .card:hover img { transform: scale(1.05); }
-        
-        .card-body { padding: 30px; transition: 0.4s; }
-        .card-body p { color: #666; margin-top: 10px; opacity: 0.8; transition: 0.4s; }
-        .card:hover .card-body p { opacity: 1; color: var(--text-dark); }
+        .card:hover img { transform: scale(1.1); }
+        .card-body { padding: 30px; }
+
+        /* Contact */
+        #contact { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; background: var(--cream); }
+        .map-container { width: 100%; height: 450px; border-radius: 25px; overflow: hidden; border: 2px solid var(--accent); }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">LIDIYA</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home" data-aos="fade-in">
+        <div class="hero-label">LIDIYA CAFE</div>
+        <h1>Taste the Difference</h1>
+        <p>Freshly baked cakes and gourmet fast food in a space built for connection.</p>
+        <div style="margin-top: 30px;">
+            <button class="btn">Order Online</button>
+        </div>
+    </section>
+
     <section id="menu">
-        <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 60px;">Signature Selection</h2>
+        <h2 data-aos="fade-up" style="text-align: center; font-size: 3.5rem; margin-bottom: 60px;">Signature Selection</h2>
         <div class="menu-grid">
             <div class="card" data-aos="fade-up">
                 <div class="img-wrap"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800" alt="Cake"></div>
-                <div class="card-body">
-                    <h3>Black Forest Cake</h3>
-                    <p>Rich chocolate sponge layered with cherry filling and topped with silky whipped cream.</p>
-                </div>
+                <div class="card-body"><h3>Black Forest Cake</h3><p style="color: #666; margin-top: 10px;">Rich chocolate sponge, cherry filling, and whipped cream.</p><p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: var(--accent);">450 ETB</p></div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <div class="img-wrap"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Burger"></div>
-                <div class="card-body">
-                    <h3>The Signature Burger</h3>
-                    <p>Double smashed patties, melted aged cheddar, caramelized onions, and our secret house-made sauce.</p>
-                </div>
+                <div class="card-body"><h3>The Signature Burger</h3><p style="color: #666; margin-top: 10px;">Double smashed patties, aged cheddar, and house-made sauce.</p><p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: var(--accent);">750 ETB</p></div>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <div class="img-wrap"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800" alt="Pizza"></div>
-                <div class="card-body">
-                    <h3>Pepperoni Supreme</h3>
-                    <p>Crispy thin crust topped with premium pepperoni, zesty tomato sauce, and bubbling mozzarella.</p>
-                </div>
+                <div class="card-body"><h3>Pepperoni Supreme</h3><p style="color: #666; margin-top: 10px;">Crispy edge, double pepperoni, and mozzarella perfection.</p><p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem; color: var(--accent);">800 ETB</p></div>
             </div>
+        </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+        <div>
+            <h2 style="font-size: 3rem;">Come Say Hello</h2>
+            <p style="margin: 30px 0; font-size: 1.2rem; color: #666;">We are located in the heart of the city. Stop by for a coffee or a full meal.</p>
+            <p style="font-weight: bold; color: var(--accent);">123 Main Street, Addis Ababa</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.665715878477!2d38.7578!3d9.0142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnNTEuMSJOIDM4wrA0NScyOC4xIkU!5e0!3m2!1sen!2set!4v1620000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
