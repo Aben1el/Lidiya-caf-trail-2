@@ -4,106 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lidiya Cafe | Taste the Difference</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: #333; background: #fff; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; }
+        .logo { font-size: 1.5rem; font-weight: 700; }
+        nav ul { display: flex; list-style: none; align-items: center; gap: 20px; }
+        nav a { text-decoration: none; color: #333; font-weight: 500; }
+        .order-btn { background: #000; color: #fff; padding: 10px 20px; border: none; cursor: pointer; }
+
+        /* Hero */
+        .hero { text-align: center; padding: 100px 8%; background: #fdfdfd; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero-btns { margin-top: 30px; display: flex; justify-content: center; gap: 15px; }
+        .hero-btns button { padding: 12px 30px; cursor: pointer; }
+
+        /* Menu */
+        #menu { padding: 80px 8%; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { border: 1px solid #eee; padding: 25px; border-radius: 10px; text-align: center; }
+        
+        /* About & Forms */
+        #about, #reservations { padding: 80px 8%; text-align: center; }
+        form { max-width: 500px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { padding: 12px; border: 1px solid #ccc; width: 100%; }
+
+        /* Footer */
+        footer { padding: 40px 8%; background: #f4f4f4; text-align: center; }
+    </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <nav>
-            <h1>LIDIYA CAFE</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#order">ORDER ONLINE</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">LIDIYA CAFE</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="order-btn">ORDER ONLINE</button></li>
+        </ul>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="home">
-        <h2>Taste the Difference</h2>
+    <section id="home" class="hero">
+        <h1>Taste the Difference</h1>
         <p>Artisanal coffee, freshly baked cakes, and gourmet fast food — a space designed for connection.</p>
-        <button>ORDER ONLINE</button>
-        <button>EXPLORE MENU</button>
+        <div class="hero-btns">
+            <button class="order-btn">ORDER ONLINE</button>
+            <button style="background:transparent; border:1px solid #000;">EXPLORE MENU</button>
+        </div>
     </section>
 
-    <!-- Featured Dishes -->
     <section id="menu">
         <h2>Our Signature Selection</h2>
-        <p>Hand-picked favorites our guests love most</p>
-        
-        <article>
-            <h3>Black Forest</h3>
-            <p>Layers of rich chocolate sponge, cherry filling, and whipped cream.</p>
-            <p>$8.50</p>
-            <button>QUICK VIEW</button>
-        </article>
-
-        <article>
-            <h3>The Signature Burger</h3>
-            <p>Double smashed patties, aged cheddar, caramelized onions, and our secret sauce on a brioche bun.</p>
-            <p>$14.50</p>
-            <button>QUICK VIEW</button>
-        </article>
-
-        <article>
-            <h3>Pepperoni Supreme</h3>
-            <p>Double pepperoni, mozzarella, and our signature tomato sauce with a crispy edge.</p>
-            <p>$15.00</p>
-            <button>QUICK VIEW</button>
-        </article>
-
-        <article>
-            <h3>Chocolate Lava</h3>
-            <p>Warm chocolate cake with a molten center, served with vanilla ice cream.</p>
-            <p>$10.00</p>
-            <button>QUICK VIEW</button>
-        </article>
-        
-        <button>VIEW FULL MENU</button>
+        <div class="menu-grid">
+            <div class="card"><h3>Black Forest</h3><p>$8.50</p></div>
+            <div class="card"><h3>The Signature Burger</h3><p>$14.50</p></div>
+            <div class="card"><h3>Pepperoni Supreme</h3><p>$15.00</p></div>
+            <div class="card"><h3>Chocolate Lava</h3><p>$10.00</p></div>
+        </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2>Where Every Meal Feels Like Home</h2>
-        <p>At Lidiya Cafe, we believe that great food brings people together. Our kitchen blends the warmth of Ethiopian hospitality with global culinary standards — every dish is crafted from scratch using fresh, locally sourced ingredients.</p>
-        <p>From our hand-selected coffee beans to our artisan pastries baked fresh each morning, every detail reflects our passion for quality.</p>
-        <button>LEARN MORE</button>
+        <p>At Lidiya Cafe, we believe that great food brings people together. Our kitchen blends the warmth of Ethiopian hospitality with global culinary standards.</p>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews">
-        <h2>Loved by the Community</h2>
-        <blockquote>"Delicious cake and vanilla pastries. Every bite was pure heaven!" — GUEST</blockquote>
-        <blockquote>"Food tasted incredibly fresh — you can tell they use the best ingredients." — GUEST</blockquote>
-        <blockquote>"Friendly and welcoming staff made us feel right at home." — GUEST</blockquote>
-        <blockquote>"You should try their special burger. Best I've ever had!" — GUEST</blockquote>
-    </section>
-
-    <!-- Reservation Section -->
     <section id="reservations">
         <h2>Reserve Your Table</h2>
-        <p>We will confirm within 24 hours. For same-day bookings, please call us.</p>
         <form>
             <input type="text" placeholder="NAME" required>
             <input type="email" placeholder="EMAIL" required>
-            <input type="tel" placeholder="PHONE">
             <input type="number" placeholder="PARTY SIZE">
-            <input type="datetime-local" placeholder="DATE & TIME">
             <textarea placeholder="SPECIAL REQUESTS"></textarea>
-            <button type="submit">SUBMIT RESERVATION REQUEST</button>
+            <button type="submit" class="order-btn">SUBMIT RESERVATION REQUEST</button>
         </form>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <section id="contact">
-            <h3>Visit Us</h3>
-            <p>123 Main Street, Your City, ST 12345</p>
-            <p>7:00 AM — 10:00 PM, Open Daily</p>
-            <p>+1 (555) 123-4567 | hello@lidiyacafe.com</p>
-        </section>
+        <p>123 Main Street | +1 (555) 123-4567 | Open Daily: 7:00 AM — 10:00 PM</p>
         <p>© 2026 Lidiya Cafe. All rights reserved.</p>
     </footer>
 
