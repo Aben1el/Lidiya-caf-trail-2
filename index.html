@@ -46,10 +46,11 @@
         .card:hover .card-overlay { transform: translateY(0); }
         .card-overlay h3 { color: var(--accent); margin-bottom: 15px; }
 
-        /* Reviews Section (Updated) */
+        /* Reviews Section (Responsive Hover Added) */
         .reviews-section { padding: 100px 8%; background: var(--text-dark); color: white; text-align: center; }
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
-        .review-card { border: 1px solid #444; padding: 30px; border-radius: 15px; text-align: left; }
+        .review-card { border: 1px solid #444; padding: 30px; border-radius: 15px; text-align: left; transition: all 0.3s ease; cursor: default; }
+        .review-card:hover { transform: translateY(-10px); background-color: var(--warm-white); color: var(--text-dark); border-color: var(--warm-white); }
         .stars { color: var(--accent); margin-bottom: 10px; display: block; }
 
         /* Connect Section */
